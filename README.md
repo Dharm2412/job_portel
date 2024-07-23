@@ -88,5 +88,5 @@ Start the server
 ## Demo
 
 
-Check out our live demo of Job Portel here: [https://job-portel.netlify.app/](https://rococo-alpaca-d42ad9.netlify.app/)
+Check out our live demo of Job Portel here: [DEMO](https://rococo-alpaca-d42ad9.netlify.app/)
 
