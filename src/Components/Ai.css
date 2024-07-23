@@ -1,0 +1,93 @@
+/* Ai.css */
+
+/* Style for the outer container with padding and background color */
+.outer-padding {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.inner-padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.inner-padding-md {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-align-lg-start {
+  text-align: left;
+}
+.background-light {
+  background-color: hsl(0, 0%, 96%);
+}
+
+/* Container for the content */
+.content-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Flexbox row for responsive layout */
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* Styling for columns */
+.column-lg-6 {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+/* Heading styling */
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: hsl(0, 0%, 20%);
+  margin-bottom: 1rem;
+}
+
+/* Span inside heading */
+.highlight-text {
+  color: #725AC1;
+}
+
+/* Paragraph styling */
+.paragraph {
+  font-size: 1.125rem;
+  color: hsl(217, 10%, 50.8%);
+  margin-bottom: 1.5rem;
+}
+
+/* Styling for the iframe container */
+.iframe-container {
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Styling for the iframe */
+.iframe-container iframe {
+  border: none;
+  height: 500px; /* Adjust height as needed */
+  border-radius: 8px; /* Optional: add rounded corners */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem;
+  }
+  
+  .iframe-container {
+    padding: 0;
+  }
+  
+  .iframe-container iframe {
+    height: 500px; /* Adjust height for smaller screens */
+  }
+}

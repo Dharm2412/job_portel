@@ -1,0 +1,11 @@
+.card-main{
+    padding: 50px;
+}
+.ridham{
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

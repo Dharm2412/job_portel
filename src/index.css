@@ -1,0 +1,459 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.collapse{
+  display: flex;
+  justify-content: center;
+  margin-left: 100px;
+  font-size: larger;
+  font-weight: bold;
+  margin-right: 120px;
+}
+.nav-item{
+  margin: 10px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  margin-left: 50px;
+  margin: 15px;
+  padding: 13px 20px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #725AC1;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #725AC1;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #725AC1;
+  
+}
+
+.btn:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #725AC1;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+.btnn{
+  display: flex;
+  justify-content: end;
+  justify-content: center;
+}
+.navbar{
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+.container-fluid{
+  margin-right: 50px;
+}
+.logo{
+  height: 80px;
+  width: 100px;
+}
+/* Reset some basic styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.sub-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-btn {
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-btn:hover {
+  background-color: #0056b3;
+}
+
+.sign-up-label {
+  text-align: center;
+  margin-top: 1rem;
+  color: #666;
+}
+
+.sign-up-link {
+  color: #007bff;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.apple-login-button,
+.google-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.apple-login-button {
+  background-color: #000;
+  color: #fff;
+}
+
+.google-login-button {
+  background-color: #fff;
+  color: #000;
+}
+
+.apple-login-button:hover {
+  background-color: #333;
+}
+
+.google-login-button:hover {
+  background-color: #eee;
+}
+
+.apple-icon,
+.google-icon {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.facebook-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid #1877f2; /* Facebook brand color */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Adding transition for background, border, and text color */
+}
+
+
+.facebook-login-button:hover {
+  background-color: #1877f2; /* Facebook brand color on hover */
+  border-color: #1877f2; /* Matching border color on hover */
+  color: white; /* Text color on hover */
+}
+
+.facebook-icon {
+  height: 1.5em;
+  width: 1.5em;
+  fill: #1877f2; /* Facebook brand color */
+}
+
+.facebook-login-button span {
+  font-size: 1rem;
+  color: #1877f2; /* Facebook brand color */
+  font-weight: bold;
+}
+.form-containerpx {
+  width: 350px;
+  height: 500px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px 30px;
+}
+
+.title {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 10px 0 30px 0;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.input {
+  border-radius: 20px;
+  border: 1px solid #c0c0c0;
+  outline: 0 !important;
+  box-sizing: border-box;
+  padding: 12px 15px;
+}
+
+.page-link {
+  text-decoration: underline;
+  margin: 0;
+  text-align: end;
+  color: #747474;
+  text-decoration-color: #747474;
+}
+
+.page-link-label {
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.page-link-label:hover {
+  color: #000;
+}
+
+.form-btn {
+  padding: 10px 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 20px;
+  border: 0 !important;
+  outline: 0 !important;
+  background: teal;
+  color: white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form-btn:active {
+  box-shadow: none;
+}
+
+.sign-up-label {
+  margin: 0;
+  font-size: 10px;
+  color: #747474;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sign-up-link {
+  margin-left: 1px;
+  font-size: 11px;
+  text-decoration: underline;
+  text-decoration-color: teal;
+  color: teal;
+  cursor: pointer;
+  font-weight: 800;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.buttons-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+.dharm{
+  display: flex;
+  justify-content: center;
+}
+.search {
+  display: inline-block;
+  position: relative;
+  width: 348px;
+}
+
+.search input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search button[type="submit"] {
+  background-color: #4e99e9;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: .9s ease;
+}
+
+.search button[type="submit"]:hover {
+  transform: scale(1.1);
+  color: rgb(255, 255, 255);
+  background-color: #725AC1;
+}
+.container-home{
+  height: 83vh;
+}
+.collapse{
+  font-size: 18px;
+}
+.row-home{
+  display: flex;
+}
+.container-home {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.row-home {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-lg-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.mb-5 {
+  margin-bottom: 3rem;
+}
+
+.mb-lg-0 {
+  margin-bottom: 0;
+}
+
+.display-3 {
+  font-size: 3rem;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+.ls-tight {
+  letter-spacing: -0.05em;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+.search button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #725AC1;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: #563d7c;
+}
+
+.img {
+  text-align: center;
+}
+
+.img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.Contect-1{
+  display: flex;
+  justify-content: center;
+  width:auto;
+}
+.comtect-me{
+  padding: 50px;
+}
+.header {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.view-header {
+  display: inline-block;
+  position: relative;
+  font-size: 2rem; /* Adjust the font size as needed */
+  font-weight: bold; /* Adjust the font weight as needed */
+  padding-bottom: 0.5rem; /* Adjust the padding as needed */
+}
+
+.view-header::after {
+  content: '';
+  display: block;
+  width: 50%; /* Adjust the width of the underline as needed */
+  height: 4px; /* Adjust the thickness of the underline as needed */
+  background-color: purple; /* Set the color of the underline to purple */
+  margin: 0.5rem auto 0; /* Adjust the margin as needed */
+}
