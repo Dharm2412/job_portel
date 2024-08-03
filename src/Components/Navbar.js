@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
-
+import { toast, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Navbar = () => {
   const [user, setUser] = useState(null);
   const auth = getAuth();
@@ -21,7 +22,7 @@ const Navbar = () => {
   const handleLogoutClick = () => {
     signOut(auth)
       .then(() => {
-        alert("Logout successful");
+        toast.success("Logout Successfull")
         setUser(null);
         navigate("/"); // Navigate to login page after logout
       })
