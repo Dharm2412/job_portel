@@ -7,6 +7,8 @@ import {
 } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { useNavigate } from "react-router-dom";
+import { toast, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD0NAOfuGHY_kzfZPT9dFFyu7y5beCc7GU",
@@ -30,12 +32,12 @@ export default function Register() {
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log("Google sign-in successful:", result.user.email);
-        alert("Google sign-in successful: " + result.user.email);
+        toast.success("Account created Successfully")
         navigate("/");
       })
       .catch((error) => {
         console.error("Google sign-in error:", error.code, error.message);
-        alert(`Google sign-in failed: ${error.message}`);
+        toast.error("Error to register");
       });
   };
 
@@ -44,12 +46,12 @@ export default function Register() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log("User registered:", userCredential.user.email);
-        alert("Registration successful");
+        toast.success("Account created Successfully");
         navigate("/");
       })
       .catch((error) => {
         console.error("Registration error:", error.code, error.message);
-        alert(`Registration failed: ${error.message}`);
+        toast.error("Error to register");
       });
   };
 
