@@ -20,6 +20,8 @@ import { getDatabase } from "firebase/database";
 import Applynow from "./Components/Applynow";
 import Footer from "./Components/Footer";
 import Ai from "./Components/Ai";
+import { ToastContainer, toast, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD0NAOfuGHY_kzfZPT9dFFyu7y5beCc7GU",
@@ -51,6 +53,22 @@ const App = () => {
     return () => unsubscribe();
   }, []);
 
+  const notify = () => {
+    if (!toast.isActive("auth-toast")) {
+      toast.error("please logged in to access this page!", {
+        toastId: "auth-toast",
+      });
+    }
+  };
+
+  const ProtectedRoute = ({ element, redirectPath = "/login" }) => {
+    if (!user) {
+      notify();
+      return <Navigate to={redirectPath} />;
+    }
+    return element;
+  };
+
   return (
     <Router>
       <Navbar />
@@ -60,28 +78,26 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route
           path="/post-jobs"
-          element={user ? <Post_jobs /> : <Navigate to="/login" />}
+          element={<ProtectedRoute element={<Post_jobs />} />}
         />
         <Route
           path="/contect"
-          element={user ? <Contect /> : <Navigate to="/login" />}
+          element={<ProtectedRoute element={<Contect />} />}
         />
         <Route path="/details/:id" element={<JobDetails />} />
         <Route
           path="/view-jobs"
-          element={user ? <Viewjobs /> : <Navigate to="/login" />}
+          element={<ProtectedRoute element={<Viewjobs />} />}
         />
         <Route
           path="/postedjobs"
-          element={user ? <Postedjobs /> : <Navigate to="/login" />}
+          element={<ProtectedRoute element={<Postedjobs />} />}
         />
         <Route path="/apply/:id" element={<Applynow />} />
-        <Route
-          path="/ai"
-          element={user ? <Ai /> : <Navigate to="/login" />}
-        />
+        <Route path="/ai" element={<ProtectedRoute element={<Ai />} />} />
       </Routes>
       <Footer />
+      <ToastContainer position="top-right" theme="dark" transition={Slide} />
     </Router>
   );
 };
