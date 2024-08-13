@@ -3,8 +3,9 @@ import { Card, Button, Image, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./View.css";
 import Loader from "./Loader";
+import "./View4.css";
 
-export default function Postedjobs() {
+export default function PostedJobs() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -12,22 +13,21 @@ export default function Postedjobs() {
     const fetchJobs = async () => {
       try {
         const response = await fetch(
-          "https://active-jobs-db.p.rapidapi.com/active-ats?title=%22Data%20Engineer%22&location=%22United%20States%22",
+          "https://jobicy.p.rapidapi.com/api/v2/remote-jobs",
           {
             method: "GET",
             headers: {
-              "x-rapidapi-host": "active-jobs-db.p.rapidapi.com",
+              "x-rapidapi-host": "jobicy.p.rapidapi.com",
               "x-rapidapi-key":
                 "9074604315msh06db58e0bb2ff26p182b6cjsna6fa352250af",
             },
           }
         );
         const data = await response.json();
-        console.log("API Response:", data);
+        console.log("API Response:", data.jobs);
 
-        // Assuming the jobs data is an array
-        if (Array.isArray(data)) {
-          setJobs(data);
+        if (Array.isArray(data.jobs)) {
+          setJobs(data.jobs);
         } else {
           console.error("Unexpected data format:", data);
         }
@@ -66,9 +66,11 @@ export default function Postedjobs() {
                       />
                     </Col>
                     <Col>
-                      <Card.Title className="h6">{job.title}</Card.Title>
+                      <Card.Title className="h6">
+                        {job.jobTitle || job.title}
+                      </Card.Title>
                       <Card.Text className="small text-muted">
-                        {job.company}
+                        {job.companyName || job.company}
                       </Card.Text>
                     </Col>
                   </Row>
@@ -78,8 +80,10 @@ export default function Postedjobs() {
                         <i className="bi bi-currency-dollar text-primary"></i>
                       </Col>
                       <Col>
-                        <h6 className="mb-0">Salary :</h6>
-                        <p className="mb-0 small">{job.salary_raw} $ / month</p>
+                        <h6 className="mb-0">jobLevel :</h6>
+                        <p className="mb-0 small">
+                          {job.jobLevel || job.salary_raw}
+                        </p>
                       </Col>
                     </Row>
                     <Row className="px-1 py-1 align-items-center">
@@ -87,15 +91,17 @@ export default function Postedjobs() {
                         <i className="bi bi-calendar-check text-primary"></i>
                       </Col>
                       <Col>
-                        <h6 className="mb-0">Deadline :</h6>
-                        <p className="mb-0 small">{job.deadline}</p>
+                        <h6 className="mb-0">Publish date :</h6>
+                        <p className="mb-0 small">{job.pubDate || "N/A"}</p>
                       </Col>
                     </Row>
                   </div>
                   <Row className="justify-content-between align-items-center">
                     <Col className="py-1">
-                      <div className="px-3 py-1 bg-success text-white ">
-                        <p className="mb-0 small">{job.employmenttype}</p>
+                      <div className="px-3 py-1 bg-success text-white">
+                        <p className="mb-0 small">
+                          {job.jobType || job.employmenttype}
+                        </p>
                       </div>
                     </Col>
                     <Col className="text-end">
