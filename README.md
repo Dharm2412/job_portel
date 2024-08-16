@@ -8,6 +8,10 @@ Job Portel is a web application designed to streamline the job application proce
 
 
 
+## Demo
+
+
+Check out our live demo of Job Portel here: [DEMO](https://job-portel.netlify.app/)
 
 
 
@@ -85,8 +89,4 @@ Start the server
 ```
 
 
-## Demo
-
-
-Check out our live demo of Job Portel here: [DEMO](https://job-portel.netlify.app/)
 
