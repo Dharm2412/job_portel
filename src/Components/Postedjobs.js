@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Card, Button, Image, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./View.css";
 import Loader from "./Loader";
+import "./View.css";
 import "./View4.css";
 
 export default function PostedJobs() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState(""); // Added state for search term
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -42,16 +43,33 @@ export default function PostedJobs() {
     fetchJobs();
   }, []);
 
+  // Filter jobs based on search term
+  const filteredJobs = jobs.filter(
+    (job) =>
+      job.jobTitle?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.companyName?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="card-main text-center">
       <div className="header text-center my-3">
         <h1 className="view-header">POSTED JOBS</h1>
       </div>
+      <header className="mb-8">
+        <h1 className="text-4xl font-bold mb-4">Find Job Here</h1>
+        <input
+          type="search"
+          placeholder="Search jobs..."
+          value={searchTerm} // Bind the search input to searchTerm state
+          onChange={(e) => setSearchTerm(e.target.value)} // Update search term as user types
+          className="max-w-md p-2 border rounded"
+        />
+      </header>
       {loading ? (
         <Loader />
-      ) : jobs.length > 0 ? (
+      ) : filteredJobs.length > 0 ? (
         <Row>
-          {jobs.map((job) => (
+          {filteredJobs.map((job) => (
             <Col md={4} key={job.id} className="mb-4">
               <Card className="px-4 py-3 mx-auto">
                 <Card.Body>
@@ -80,7 +98,7 @@ export default function PostedJobs() {
                         <i className="bi bi-currency-dollar text-primary"></i>
                       </Col>
                       <Col>
-                        <h6 className="mb-0">jobLevel :</h6>
+                        <h6 className="mb-0">Job Level:</h6>
                         <p className="mb-0 small">
                           {job.jobLevel || job.salary_raw}
                         </p>
@@ -91,7 +109,7 @@ export default function PostedJobs() {
                         <i className="bi bi-calendar-check text-primary"></i>
                       </Col>
                       <Col>
-                        <h6 className="mb-0">Publish date :</h6>
+                        <h6 className="mb-0">Publish Date:</h6>
                         <p className="mb-0 small">{job.pubDate || "N/A"}</p>
                       </Col>
                     </Row>
@@ -126,10 +144,7 @@ export default function PostedJobs() {
           ))}
         </Row>
       ) : (
-        <p>
-          The API requests have been completed, and job opportunities will be
-          available soon.
-        </p>
+        <p>No jobs found matching your search criteria.</p>
       )}
     </div>
   );
