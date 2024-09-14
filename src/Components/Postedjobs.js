@@ -55,16 +55,20 @@ export default function PostedJobs() {
       <div className="header text-center my-3">
         <h1 className="view-header">POSTED JOBS</h1>
       </div>
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">Find Job Here</h1>
-        <input
-          type="search"
-          placeholder="Search jobs..."
-          value={searchTerm} // Bind the search input to searchTerm state
-          onChange={(e) => setSearchTerm(e.target.value)} // Update search term as user types
-          className="max-w-md p-2 border rounded"
-        />
-      </header>
+      <div className="input-group mb-3">
+        <div className="w-50 mx-auto">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search jobs..."
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+      </div>
+
       {loading ? (
         <Loader />
       ) : filteredJobs.length > 0 ? (
